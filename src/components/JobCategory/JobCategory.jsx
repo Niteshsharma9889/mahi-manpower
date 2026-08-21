@@ -1,23 +1,28 @@
 import "./JobCategory.css";
 
 const categories = [
-  "South Indian (Breakfast/Tiffins)",
-  "Dosa Maker (Specialist)",
-  "South Indian (Thali)",
-  "South Indian (Pulao, Non-Veg)",
-  "South Indian (Veg & Non-Veg)",
-  "Biryani (Specialist)",
+  "Chef / Cook",
+  "Waiter / Steward",
+  "Kitchen Helper",
+  "Restaurant Manager",
+  "Housekeeping Staff",
+  "Delivery Staff",
+  "Security Staff",
+  "Other Support Staff",
 ];
 
 function JobCategory() {
   return (
     <section className="job-category" id="jobs">
-
       <div className="job-category-container">
 
         <h2 className="job-category-title">
-          Job Category
+          Job Categories
         </h2>
+
+        <p className="job-category-subtitle">
+          Find reliable and skilled staff for your business
+        </p>
 
         <div className="category-grid">
           {categories.map((category, index) => (
@@ -32,7 +37,6 @@ function JobCategory() {
         </div>
 
       </div>
-
     </section>
   );
 }
