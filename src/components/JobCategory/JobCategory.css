@@ -1,0 +1,127 @@
+/* =========================
+   JOB CATEGORY
+========================= */
+
+.job-category {
+  width: 100%;
+  background: #f1f5f8;
+
+  padding: 70px 0 80px;
+}
+
+.job-category-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.job-category-title {
+  margin: 0 0 42px;
+
+  text-align: center;
+
+  color: #1764ad;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+
+/* =========================
+   CATEGORY GRID
+========================= */
+
+.category-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 16px;
+}
+
+
+/* =========================
+   CATEGORY ITEM
+========================= */
+
+.category-item {
+  min-height: 49px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 18px;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  color: #1d2430;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.category-item:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 15px rgba(13, 27, 42, 0.08);
+
+  color: #0d1b2a;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 800px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .job-category {
+    padding: 55px 0 65px;
+  }
+
+  .job-category-container {
+    padding: 0 20px;
+  }
+
+  .job-category-title {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .category-item {
+    min-height: 52px;
+  }
+}
