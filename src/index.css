@@ -14,3 +14,75 @@ body,
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+/* =========================
+   DARK MODE
+========================= */
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background: #111827;
+  color: #f9fafb;
+}
+
+
+/* Navbar */
+
+body.dark-mode .navbar {
+  background: #111827;
+  border-bottom-color: #374151;
+}
+
+body.dark-mode .navbar-links a,
+body.dark-mode .login-link {
+  color: #d1d5db;
+}
+
+body.dark-mode .navbar-links a.active {
+  color: #fbbf24;
+}
+
+body.dark-mode .navbar-brand,
+body.dark-mode .brand-name {
+  color: #ffffff;
+}
+
+body.dark-mode .navbar-divider {
+  background: #374151;
+}
+
+
+/* About Page */
+
+body.dark-mode .about-story {
+  background: #1f2937;
+}
+
+body.dark-mode .about-story h2,
+body.dark-mode .about-values h2,
+body.dark-mode .about-value-card h3 {
+  color: #f9fafb;
+}
+
+body.dark-mode .about-story p,
+body.dark-mode .about-value-card p {
+  color: #d1d5db;
+}
+
+body.dark-mode .about-values {
+  background: #111827;
+}
+
+body.dark-mode .about-value-card {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+
+/* Theme Button */
+
+body.dark-mode .theme-button {
+  color: #fbbf24;
+}

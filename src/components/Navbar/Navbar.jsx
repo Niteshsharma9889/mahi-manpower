@@ -1,29 +1,41 @@
+import { NavLink, Link } from "react-router-dom";
 import "./Navbar.css";
 
-function Navbar() {
+function Navbar({ darkMode, setDarkMode }) {
   return (
     <nav className="navbar">
       <div className="navbar-container">
 
         {/* Brand */}
-        <a href="/" className="navbar-brand">
+        <Link to="/" className="navbar-brand">
           <img src="/logo.png" alt="Mahi Manpower" />
 
           <span className="brand-name">
             <span className="brand-mahi">Mahi</span>
             <span className="brand-manpower">Manpower</span>
           </span>
-        </a>
+        </Link>
 
         {/* Navigation */}
         <div className="navbar-links">
-          <a href="#home" className="active">
-            Home
-          </a>
 
-          <a href="#about">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "active" : ""
+            }
+          >
+            Home
+          </NavLink>
+
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "active" : ""
+            }
+          >
             About Us
-          </a>
+          </NavLink>
 
           <a href="#jobs">
             Jobs
@@ -40,22 +52,27 @@ function Navbar() {
           <a href="#contact">
             Contact Us
           </a>
+
         </div>
 
-        {/* Right side */}
+        {/* Right Side */}
         <div className="navbar-right">
+
           <span className="navbar-divider"></span>
 
           <a href="#login" className="login-link">
             Login
           </a>
 
+          {/* Dark Mode Toggle */}
           <button
             className="theme-button"
-            aria-label="Toggle theme"
+            aria-label="Toggle dark mode"
+            onClick={() => setDarkMode(!darkMode)}
           >
-            ☾
+            {darkMode ? "☀" : "☾"}
           </button>
+
         </div>
 
       </div>
