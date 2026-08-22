@@ -1,119 +1,125 @@
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero {
   position: relative;
-
   width: 100%;
   min-height: calc(100vh - 82px);
 
-  background-image: url("/hero-bg.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background:
+    radial-gradient(
+      circle at 72% 50%,
+      rgba(244, 184, 42, 0.16),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #dcebf7 0%,
+      #edf4f9 48%,
+      #d7e7f3 100%
+    );
 
   overflow: hidden;
 }
 
-
-/* =========================
-   DARK OVERLAY
-========================= */
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(5, 13, 20, 0.88) 0%,
-      rgba(5, 13, 20, 0.72) 35%,
-      rgba(5, 13, 20, 0.20) 72%,
-      rgba(5, 13, 20, 0.10) 100%
-    );
-}
-
-
-/* =========================
-   CONTENT CONTAINER
-========================= */
+/* =========================================================
+   CONTAINER
+========================================================= */
 
 .hero-container {
   position: relative;
   z-index: 2;
 
-  max-width: 1480px;
+  max-width: 1600px;
+
   min-height: calc(100vh - 82px);
 
   margin: 0 auto;
-  padding: 110px 36px 100px;
 
-  display: flex;
+  padding: 70px 50px 80px;
+
+  display: grid;
+
+  grid-template-columns: 0.95fr 1.05fr;
+
   align-items: center;
+
+  gap: 25px;
 }
 
 
-/* =========================
-   HERO CONTENT
-========================= */
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
 
 .hero-content {
-  width: 570px;
-  max-width: 100%;
+  position: relative;
+
+  z-index: 10;
+
+  width: 100%;
+
+  max-width: 650px;
 }
 
 
-/* =========================
+/* =========================================================
    GOLD LINE
-========================= */
+========================================================= */
 
 .hero-line {
   display: block;
 
-  width: 53px;
+  width: 58px;
   height: 4px;
 
-  margin-bottom: 27px;
+  margin-bottom: 28px;
 
-  background: #d4a017;
-  border-radius: 2px;
+  background: #f4b82a;
+
+  border-radius: 3px;
 }
 
 
-/* =========================
+/* =========================================================
    EYEBROW
-========================= */
+========================================================= */
 
 .hero-eyebrow {
-  margin: 0 0 22px;
+  margin: 0 0 24px;
 
-  color: #e0b32d;
+  color: #c99100;
 
   font-family: Arial, Helvetica, sans-serif;
+
   font-size: 16px;
-  font-weight: 600;
+
+  font-weight: 700;
 
   letter-spacing: 4px;
+
   line-height: 1.4;
 }
 
 
-/* =========================
-   HEADING
-========================= */
+/* =========================================================
+   TITLE
+========================================================= */
 
 .hero-title {
   margin: 0;
 
-  color: #ffffff;
+  color: #0d1b2a;
 
   font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(52px, 5vw, 72px);
-  font-weight: 700;
 
-  letter-spacing: -2.5px;
+  font-size: clamp(54px, 5vw, 76px);
+
+  font-weight: 800;
+
+  letter-spacing: -3px;
+
   line-height: 0.98;
 }
 
@@ -122,50 +128,58 @@
 }
 
 
-/* =========================
+/* =========================================================
    DESCRIPTION
-========================= */
+========================================================= */
 
 .hero-description {
-  max-width: 570px;
+  max-width: 620px;
 
-  margin: 30px 0 0;
+  margin: 32px 0 0;
 
-  color: rgba(255, 255, 255, 0.82);
+  color: #475569;
 
   font-family: Georgia, "Times New Roman", serif;
+
   font-size: 19px;
-  font-weight: 400;
 
   line-height: 1.65;
 }
 
 
-/* =========================
+/* =========================================================
    BUTTONS
-========================= */
+========================================================= */
 
 .hero-buttons {
   display: flex;
+
   align-items: center;
-  gap: 17px;
+
+  gap: 18px;
 
   margin-top: 38px;
 }
 
 .hero-button {
-  min-width: 175px;
-  height: 60px;
+  min-width: 195px;
+
+  height: 64px;
 
   display: inline-flex;
+
   align-items: center;
+
   justify-content: center;
+
   gap: 12px;
 
-  border-radius: 8px;
+  border-radius: 9px;
 
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
+
+  font-size: 17px;
+
   font-weight: 700;
 
   text-decoration: none;
@@ -173,85 +187,509 @@
   transition:
     transform 0.2s ease,
     background 0.2s ease,
-    border-color 0.2s ease;
+    box-shadow 0.2s ease;
 }
 
 .hero-button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 
-/* Primary button */
+/* Primary */
 
 .hero-button.primary {
   background: #f4b82a;
+
   color: #0d1b2a;
+
+  box-shadow:
+    0 8px 20px rgba(244, 184, 42, 0.2);
 }
 
 .hero-button.primary:hover {
-  background: #dca319;
+  background: #e5a915;
+
+  box-shadow:
+    0 12px 25px rgba(244, 184, 42, 0.28);
 }
 
 
-/* Secondary button */
+/* Secondary */
 
 .hero-button.secondary {
-  background: rgba(13, 27, 42, 0.45);
-  color: #f4b82a;
+  background: #ffffff;
 
-  border: 1px solid rgba(212, 160, 23, 0.6);
+  color: #1261a0;
+
+  border: 1.5px solid #d6a017;
 }
 
 .hero-button.secondary:hover {
-  background: rgba(13, 27, 42, 0.75);
-  border-color: #d4a017;
+  background: #fff9e8;
+
+  border-color: #d6a017;
 }
 
 
 /* Arrow */
 
 .button-arrow {
-  font-size: 21px;
+  font-size: 22px;
+
   line-height: 1;
 }
 
 
-/* =========================
+/* =========================================================
+   RIGHT VISUAL
+========================================================= */
+
+.hero-visual {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 650px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   RINGS
+========================================================= */
+
+.hero-ring {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(212, 160, 23, 0.30);
+
+  pointer-events: none;
+}
+
+.hero-ring-one {
+  width: 360px;
+  height: 360px;
+}
+
+.hero-ring-two {
+  width: 500px;
+  height: 500px;
+}
+
+.hero-ring-three {
+  width: 640px;
+  height: 640px;
+}
+
+
+/* =========================================================
+   CENTER IMAGE
+========================================================= */
+
+.hero-center {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  z-index: 5;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   CIRCULAR IMAGE
+========================================================= */
+
+.hero-image {
+  position: relative;
+
+  width: 310px;
+  height: 310px;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  border: 8px solid #ffffff;
+
+  background: #e8edf3;
+
+  flex-shrink: 0;
+
+  box-shadow:
+    0 18px 45px rgba(13, 27, 42, 0.17),
+    0 0 0 10px rgba(255, 255, 255, 0.65);
+}
+
+.hero-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   CENTER LABEL
+========================================================= */
+
+.hero-center-label {
+  margin-top: 22px;
+
+  color: #526176;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   STAT CARDS
+========================================================= */
+
+.hero-stat {
+  position: absolute;
+
+  z-index: 8;
+
+  width: 220px;
+
+  min-height: 110px;
+
+  padding: 20px 22px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  border: 1px solid rgba(13, 27, 42, 0.06);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 18px 45px rgba(13, 27, 42, 0.13);
+
+  /*
+    IMPORTANT:
+    Every card starts at exactly the
+    center point of the visual.
+  */
+
+  left: 50%;
+  top: 50%;
+
+  opacity: 0;
+
+  animation-duration: 1s;
+
+  animation-timing-function: cubic-bezier(
+    0.22,
+    1,
+    0.36,
+    1
+  );
+
+  animation-fill-mode: forwards;
+}
+
+
+/* =========================================================
+   NUMBERS
+========================================================= */
+
+.hero-stat strong {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 36px;
+
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.hero-stat span {
+  max-width: 190px;
+
+  color: #526176;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   COLORS
+========================================================= */
+
+.stat-orange strong {
+  color: #ed6b0c;
+}
+
+.stat-green strong {
+  color: #16a34a;
+}
+
+.stat-blue strong {
+  color: #2864d7;
+}
+
+.stat-purple strong {
+  color: #7040df;
+}
+
+.stat-red strong {
+  color: #e32929;
+}
+
+
+/* =========================================================
+   CARD ANIMATIONS
+
+   ALL CARDS START:
+   left: 50%
+   top: 50%
+
+   They then travel outward from the
+   SAME central point.
+========================================================= */
+
+
+/* TOP */
+
+.stat-top {
+  animation-name: cardTop;
+
+  animation-delay: 0.1s;
+}
+
+@keyframes cardTop {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.25);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -290px)
+      scale(1);
+  }
+
+}
+
+
+/* LEFT */
+
+.stat-left {
+  animation-name: cardLeft;
+
+  animation-delay: 0.25s;
+}
+
+@keyframes cardLeft {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.25);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translate(-330px, -50%)
+      scale(1);
+  }
+
+}
+
+
+/* RIGHT */
+
+.stat-right {
+  animation-name: cardRight;
+
+  animation-delay: 0.4s;
+}
+
+@keyframes cardRight {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.25);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translate(110px, -50%)
+      scale(1);
+  }
+
+}
+
+
+/* BOTTOM LEFT */
+
+.stat-bottom-left {
+  animation-name: cardBottomLeft;
+
+  animation-delay: 0.55s;
+}
+
+@keyframes cardBottomLeft {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.25);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translate(-330px, 145px)
+      scale(1);
+  }
+
+}
+
+
+/* BOTTOM RIGHT */
+
+.stat-bottom-right {
+  animation-name: cardBottomRight;
+
+  animation-delay: 0.7s;
+}
+
+@keyframes cardBottomRight {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.25);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translate(110px, 145px)
+      scale(1);
+  }
+
+}
+
+
+/* =========================================================
    BOTTOM FADE
-========================= */
+========================================================= */
 
 .hero-bottom-fade {
   position: absolute;
+
   z-index: 3;
 
   left: 0;
   right: 0;
   bottom: 0;
 
-  height: 110px;
+  height: 55px;
 
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.15) 45%,
-    rgba(255, 255, 255, 0.85) 100%
-  );
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(244, 247, 251, 0),
+      rgba(244, 247, 251, 0.9)
+    );
 
   pointer-events: none;
 }
 
 
-/* =========================
+/* =========================================================
    TABLET
-========================= */
+========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
+
   .hero-container {
-    padding: 90px 36px 100px;
-  }
+    grid-template-columns: 0.9fr 1.1fr;
 
-  .hero-content {
-    width: 520px;
+    padding: 60px 35px 70px;
   }
 
   .hero-title {
@@ -261,63 +699,212 @@
   .hero-description {
     font-size: 18px;
   }
+
+  .hero-visual {
+    min-height: 580px;
+  }
+
+  .hero-image {
+    width: 270px;
+    height: 270px;
+  }
+
+  .hero-ring-one {
+    width: 320px;
+    height: 320px;
+  }
+
+  .hero-ring-two {
+    width: 430px;
+    height: 430px;
+  }
+
+  .hero-ring-three {
+    width: 550px;
+    height: 550px;
+  }
+
+  .hero-stat {
+    width: 190px;
+    min-height: 100px;
+  }
+
+  .hero-stat strong {
+    font-size: 31px;
+  }
+
+  /* Tablet card positions */
+
+  @keyframes cardTop {
+
+    0% {
+      opacity: 0;
+
+      transform:
+        translate(-50%, -50%)
+        scale(0.25);
+    }
+
+    100% {
+      opacity: 1;
+
+      transform:
+        translate(-50%, -240px)
+        scale(1);
+    }
+
+  }
+
+  @keyframes cardLeft {
+
+    0% {
+      opacity: 0;
+
+      transform:
+        translate(-50%, -50%)
+        scale(0.25);
+    }
+
+    100% {
+      opacity: 1;
+
+      transform:
+        translate(-285px, -50%)
+        scale(1);
+    }
+
+  }
+
+  @keyframes cardRight {
+
+    0% {
+      opacity: 0;
+
+      transform:
+        translate(-50%, -50%)
+        scale(0.25);
+    }
+
+    100% {
+      opacity: 1;
+
+      transform:
+        translate(95px, -50%)
+        scale(1);
+    }
+
+  }
+
+  @keyframes cardBottomLeft {
+
+    0% {
+      opacity: 0;
+
+      transform:
+        translate(-50%, -50%)
+        scale(0.25);
+    }
+
+    100% {
+      opacity: 1;
+
+      transform:
+        translate(-285px, 125px)
+        scale(1);
+    }
+
+  }
+
+  @keyframes cardBottomRight {
+
+    0% {
+      opacity: 0;
+
+      transform:
+        translate(-50%, -50%)
+        scale(0.25);
+    }
+
+    100% {
+      opacity: 1;
+
+      transform:
+        translate(95px, 125px)
+        scale(1);
+    }
+
+  }
+
 }
 
 
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media (max-width: 800px) {
-  .hero {
-    min-height: calc(100vh - 72px);
 
-    background-position: 62% center;
+  .hero {
+    min-height: auto;
   }
 
   .hero-container {
-    min-height: calc(100vh - 72px);
+    min-height: auto;
 
-    padding: 70px 24px 90px;
+    padding: 60px 22px 70px;
 
-    align-items: flex-start;
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 45px;
   }
 
-  .hero-overlay {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(5, 13, 20, 0.90) 0%,
-        rgba(5, 13, 20, 0.68) 100%
-      );
+
+  /* Content */
+
+  .hero-content {
+    max-width: 100%;
   }
 
   .hero-line {
     width: 45px;
+
     height: 3px;
-    margin-bottom: 22px;
+
+    margin-bottom: 20px;
   }
 
   .hero-eyebrow {
-    font-size: 12px;
+    font-size: 11px;
+
     letter-spacing: 2.5px;
-    margin-bottom: 18px;
+
+    margin-bottom: 17px;
   }
 
   .hero-title {
     font-size: clamp(42px, 12vw, 58px);
-    letter-spacing: -1.8px;
+
+    letter-spacing: -2px;
+
     line-height: 1;
   }
 
   .hero-description {
     margin-top: 25px;
+
     font-size: 17px;
+
     line-height: 1.55;
   }
 
+
+  /* Buttons */
+
   .hero-buttons {
     flex-direction: column;
+
     align-items: stretch;
 
     margin-top: 30px;
@@ -326,4 +913,347 @@
   .hero-button {
     width: 100%;
   }
+
+
+  /* Visual */
+
+  .hero-visual {
+    min-height: 650px;
+
+    width: 100%;
+  }
+
+
+  /* Image */
+
+  .hero-image {
+    width: 210px;
+
+    height: 210px;
+
+    border-width: 6px;
+  }
+
+
+  /* Rings */
+
+  .hero-ring-one {
+    width: 260px;
+
+    height: 260px;
+  }
+
+  .hero-ring-two {
+    width: 370px;
+
+    height: 370px;
+  }
+
+  .hero-ring-three {
+    width: 480px;
+
+    height: 480px;
+  }
+
+
+  /* Cards */
+
+  .hero-stat {
+    width: 145px;
+
+    min-height: 85px;
+
+    padding: 13px 10px;
+
+    border-radius: 16px;
+  }
+
+  .hero-stat strong {
+    font-size: 24px;
+
+    margin-bottom: 5px;
+  }
+
+  .hero-stat span {
+    font-size: 11px;
+
+    line-height: 1.3;
+  }
+
+
+  /* =====================================================
+     MOBILE ANIMATIONS
+     Cards still originate from the EXACT center.
+  ===================================================== */
+
+  @keyframes cardTop {
+
+    0% {
+      opacity: 0;
+
+      transform:
+        translate(-50%, -50%)
+        scale(0.25);
+    }
+
+    100% {
+      opacity: 1;
+
+      transform:
+        translate(-50%, -230px)
+        scale(1);
+    }
+
+  }
+
+  @keyframes cardLeft {
+
+    0% {
+      opacity: 0;
+
+      transform:
+        translate(-50%, -50%)
+        scale(0.25);
+    }
+
+    100% {
+      opacity: 1;
+
+      transform:
+        translate(-175px, -50%)
+        scale(1);
+    }
+
+  }
+
+  @keyframes cardRight {
+
+    0% {
+      opacity: 0;
+
+      transform:
+        translate(-50%, -50%)
+        scale(0.25);
+    }
+
+    100% {
+      opacity: 1;
+
+      transform:
+        translate(30px, -50%)
+        scale(1);
+    }
+
+  }
+
+  @keyframes cardBottomLeft {
+
+    0% {
+      opacity: 0;
+
+      transform:
+        translate(-50%, -50%)
+        scale(0.25);
+    }
+
+    100% {
+      opacity: 1;
+
+      transform:
+        translate(-175px, 125px)
+        scale(1);
+    }
+
+  }
+
+  @keyframes cardBottomRight {
+
+    0% {
+      opacity: 0;
+
+      transform:
+        translate(-50%, -50%)
+        scale(0.25);
+    }
+
+    100% {
+      opacity: 1;
+
+      transform:
+        translate(30px, 125px)
+        scale(1);
+    }
+
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+  .hero-container {
+    padding-left: 18px;
+
+    padding-right: 18px;
+  }
+
+  .hero-title {
+    font-size: 43px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .hero-visual {
+    min-height: 570px;
+  }
+
+  .hero-image {
+    width: 180px;
+
+    height: 180px;
+  }
+
+  .hero-ring-one {
+    width: 225px;
+
+    height: 225px;
+  }
+
+  .hero-ring-two {
+    width: 315px;
+
+    height: 315px;
+  }
+
+  .hero-ring-three {
+    width: 410px;
+
+    height: 410px;
+  }
+
+  .hero-stat {
+    width: 125px;
+
+    min-height: 76px;
+
+    padding: 9px 7px;
+  }
+
+  .hero-stat strong {
+    font-size: 20px;
+  }
+
+  .hero-stat span {
+    font-size: 9.5px;
+  }
+
+
+  /* Small mobile positions */
+
+  @keyframes cardTop {
+
+    0% {
+      opacity: 0;
+
+      transform:
+        translate(-50%, -50%)
+        scale(0.25);
+    }
+
+    100% {
+      opacity: 1;
+
+      transform:
+        translate(-50%, -205px)
+        scale(1);
+    }
+
+  }
+
+  @keyframes cardLeft {
+
+    0% {
+      opacity: 0;
+
+      transform:
+        translate(-50%, -50%)
+        scale(0.25);
+    }
+
+    100% {
+      opacity: 1;
+
+      transform:
+        translate(-145px, -50%)
+        scale(1);
+    }
+
+  }
+
+  @keyframes cardRight {
+
+    0% {
+      opacity: 0;
+
+      transform:
+        translate(-50%, -50%)
+        scale(0.25);
+    }
+
+    100% {
+      opacity: 1;
+
+      transform:
+        translate(20px, -50%)
+        scale(1);
+    }
+
+  }
+
+  @keyframes cardBottomLeft {
+
+    0% {
+      opacity: 0;
+
+      transform:
+        translate(-50%, -50%)
+        scale(0.25);
+    }
+
+    100% {
+      opacity: 1;
+
+      transform:
+        translate(-145px, 105px)
+        scale(1);
+    }
+
+  }
+
+  @keyframes cardBottomRight {
+
+    0% {
+      opacity: 0;
+
+      transform:
+        translate(-50%, -50%)
+        scale(0.25);
+    }
+
+    100% {
+      opacity: 1;
+
+      transform:
+        translate(20px, 105px)
+        scale(1);
+    }
+
+  }
+
 }
